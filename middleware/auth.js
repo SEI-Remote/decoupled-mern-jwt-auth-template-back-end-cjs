@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken'
+const jwt = require('jsonwebtoken')
 
 const SECRET = process.env.SECRET
 
@@ -23,4 +23,4 @@ function checkAuth(req, res, next) {
   return req.user ? next() : res.status(401).json({ msg: 'Not Authorized' })
 }
 
-export { decodeUserFromToken, checkAuth }
+module.exports = { decodeUserFromToken, checkAuth }

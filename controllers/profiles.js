@@ -1,5 +1,5 @@
-import { Profile } from '../models/profile.js'
-import { v2 as cloudinary } from 'cloudinary'
+const Profile = require('../models/profile.js').Profile
+const cloudinary = require('cloudinary').v2
 
 function index(req, res) {
   Profile.find({})
@@ -29,4 +29,4 @@ function addPhoto(req, res) {
   })
 }
 
-export { index, addPhoto }
+module.exports = { index, addPhoto }

@@ -1,13 +1,13 @@
-import 'dotenv/config.js'
-import express from 'express'
-import logger from 'morgan'
-import cors from 'cors'
-import formData from 'express-form-data'
+require('dotenv').config()
+const express = require('express')
+const logger = require('morgan')
+const cors = require('cors')
+const formData = require('express-form-data')
 
-import { router as profilesRouter } from './routes/profiles.js'
-import { router as authRouter } from './routes/auth.js'
+const profilesRouter = require('./routes/profiles.js').router
+const authRouter = require('./routes/auth.js').router
 
-import './config/database.js'
+require('./config/database.js')
 
 const app = express()
 
@@ -27,4 +27,4 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500).json({ err: err.message })
 })
 
-export { app }
+module.exports = { app }

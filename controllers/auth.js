@@ -1,8 +1,9 @@
-import { User } from '../models/user.js'
-import { Profile } from '../models/profile.js'
-import jwt from 'jsonwebtoken'
+const User = require('../models/user.js').User
+const Profile = require('../models/profile.js').Profile
+const jwt = require('jsonwebtoken')
 
 function signup(req, res) {
+  console.log(req.body);
   User.findOne({ email: req.body.email })
   .then(user => {
     if (user) {
@@ -73,4 +74,4 @@ function createJWT(user) {
   return jwt.sign({ user }, process.env.SECRET, { expiresIn: '24h' })
 }
 
-export { signup, login, changePassword }
+module.exports = { signup, login, changePassword }

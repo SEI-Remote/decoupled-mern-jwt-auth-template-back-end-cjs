@@ -1,8 +1,10 @@
-import { Router } from 'express'
-import * as authCtrl from '../controllers/auth.js'
-import { decodeUserFromToken, checkAuth } from '../middleware/auth.js'
+const express = require('express')
+const authCtrl = require('../controllers/auth.js')
+const middleware = require('../middleware/auth.js')
 
-const router = Router()
+const router = express.Router()
+
+const { decodeUserFromToken, checkAuth } = middleware
 
 /*---------- Public Routes ----------*/
 router.post('/signup', authCtrl.signup)
@@ -12,4 +14,4 @@ router.post('/login', authCtrl.login)
 router.use(decodeUserFromToken)
 router.post('/change-password', checkAuth, authCtrl.changePassword)
 
-export { router }
+module.exports = { router }
