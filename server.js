@@ -21,7 +21,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(formData.parse())
 
-// router middleware
+// mount routes
 app.use('/api/profiles', profilesRouter)
 app.use('/api/auth', authRouter)
 
