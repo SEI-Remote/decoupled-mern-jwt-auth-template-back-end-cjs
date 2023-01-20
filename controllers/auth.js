@@ -3,7 +3,6 @@ const { Profile } = require('../models/profile.js')
 const jwt = require('jsonwebtoken')
 
 function signup(req, res) {
-  console.log(req.body);
   User.findOne({ email: req.body.email })
   .then(user => {
     if (user) {
