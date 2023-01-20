@@ -1,5 +1,5 @@
-const User = require('../models/user.js').User
-const Profile = require('../models/profile.js').Profile
+const { User } = require('../models/user.js')
+const { Profile } = require('../models/profile.js')
 const jwt = require('jsonwebtoken')
 
 function signup(req, res) {

@@ -1,10 +1,8 @@
-const express = require('express')
+const { Router } = require('express')
 const authCtrl = require('../controllers/auth.js')
-const middleware = require('../middleware/auth.js')
+const { decodeUserFromToken, checkAuth } = require('../middleware/auth.js')
 
-const router = express.Router()
-
-const { decodeUserFromToken, checkAuth } = middleware
+const router = Router()
 
 /*---------- Public Routes ----------*/
 router.post('/signup', authCtrl.signup)

@@ -1,4 +1,4 @@
-const Profile = require('../models/profile.js').Profile
+const { Profile } = require('../models/profile.js')
 const cloudinary = require('cloudinary').v2
 
 function index(req, res) {
