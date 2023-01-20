@@ -9,8 +9,8 @@ const formData = require('express-form-data')
 require('./config/database.js')
 
 // require routes
-const profilesRouter = require('./routes/profiles.js').router
-const authRouter = require('./routes/auth.js').router
+const profilesRouter = require('./routes/profiles.js')
+const authRouter = require('./routes/auth.js')
 
 // create the express app
 const app = express()
