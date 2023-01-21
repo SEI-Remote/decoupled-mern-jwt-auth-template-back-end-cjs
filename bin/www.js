@@ -1,5 +1,5 @@
 // Module dependencies
-const app = require('../server.js').app
+const app = require('../server.js')
 const http = require('http')
 
 // Get port from environment and store in Express
