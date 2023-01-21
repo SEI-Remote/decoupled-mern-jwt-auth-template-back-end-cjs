@@ -1,8 +1,6 @@
-const { Router } = require('express')
+const router = require('express').Router()
 const authCtrl = require('../controllers/auth.js')
 const { decodeUserFromToken, checkAuth } = require('../middleware/auth.js')
-
-const router = Router()
 
 /*---------- Public Routes ----------*/
 router.post('/signup', authCtrl.signup)
