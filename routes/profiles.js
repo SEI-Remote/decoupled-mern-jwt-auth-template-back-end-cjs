@@ -1,8 +1,6 @@
-const { Router } = require('express')
+const router = require('express').Router()
 const profilesCtrl = require('../controllers/profiles.js')
 const { decodeUserFromToken, checkAuth } = require('../middleware/auth.js')
-
-const router = Router()
 
 /*---------- Public Routes ----------*/
 
